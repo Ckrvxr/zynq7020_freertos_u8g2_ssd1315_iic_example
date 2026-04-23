@@ -1,9 +1,12 @@
 #include "FreeRTOS.h"
 #include "task.h"
-#include "xil_printf.h"
+
 #include "xparameters.h"
-#include "display.h"
+#include "xil_printf.h"
+
 #include <stdio.h>
+
+#include "display.h"
 
 TaskHandle_t xDisplayTaskHandle;
 
@@ -23,7 +26,7 @@ static void vDisplayTask(void *pvParameters) {
         
         u8g2_SendBuffer(&u8g2);
 
-        vTaskDelay(pdMS_TO_TICKS(100));
+        vTaskDelay(pdMS_TO_TICKS(20));
     }
 }
 
